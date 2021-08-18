@@ -50,13 +50,13 @@ function vowelBonusScore(word){
    word = word.toUpperCase();
    vowelBonusScoreArray = word.split('');
    letterPoints = 0
-      for(let i=0; 
-      i<vowelBonusScoreArray[i] === 'A' ||
+      for(let i=0; i < vowelBonusScoreArray.length; i++) {
+      if(vowelBonusScoreArray[i] === 'A' ||
       vowelBonusScoreArray[i] === 'E' ||
       vowelBonusScoreArray[i] === 'I' ||
       vowelBonusScoreArray[i] === 'O' ||
-      vowelBonusScoreArray[i] === 'U' ||
-         letterPoints+=3)
+      vowelBonusScoreArray[i] === 'U') {
+         letterPoints+=3;
       } else {
          letterPoints +=1
       }
@@ -119,7 +119,7 @@ function transform(pointStructure) {
    return newPointStruct;
 };
 
-let newPointStructure = transorm(oldPointStructure);
+let newPointStructure = transform(oldPointStructure);
 newPointStructure[" "] = 0;
 
 function runProgram() {
